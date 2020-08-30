@@ -1,12 +1,7 @@
-
   <article class="post">
-    <header>
       <div class="title">
-        <h1><a href="{{ .RelPermalink }}">{{ i18n "contact" }}</a></h1>
-        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+        <h1>Contact</h1>
       </div>
-    </header>
-      <div id="content">
         <div class="contact-container">
           {{ if .Params.netlify }}
             <form name="contact" method="POST" action="thank-you" data-netlify-recaptcha="true" data-netlify="true" center width="300px">
@@ -14,7 +9,7 @@
             <form id="contact" action="//{{ .Params.emailService }}" method="post" center width="300px">
           {{ end }}
           <fieldset>
-            <input placeholder="{{ i18n "form_name" }}" type="text" name="name" tabindex="1" required autofocus>
+            <input placeholder="{{ i18n "form_name" }}" type="text" name="name" tabindex="1" required>
           </fieldset>
           <fieldset>
             <input placeholder="{{ i18n "form_email" }}" type="email" name="_replyto" tabindex="2" required>
@@ -34,5 +29,4 @@
           </fieldset>
         </form>
       </div>
-    </div>
   </article>
